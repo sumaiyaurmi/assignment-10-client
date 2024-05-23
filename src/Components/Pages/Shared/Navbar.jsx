@@ -185,7 +185,7 @@ const Navbar = () => {
               Login
             </button>
           </Link>
-          <Link to={"/login"}>
+          <Link to={"/sign-up"}>
             <button
               className="btn hover:text-black hover:bg-orange-500
                border-orange-500"
