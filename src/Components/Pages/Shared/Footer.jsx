@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-  <footer className="footer footer-center p-10 bg-slate-200 text-black text-primary-content rounded-2xl">
+  <footer className="footer footer-center p-10 bg-slate-200 text-black  rounded-2xl">
   <aside>
 <img src='https://i.postimg.cc/MHHCFYk4/vecteezy-beach-island-landscape-logo-beach-logo-design-vector-6626965-1.jpg' className='w-20 rounded-2xl' alt="" />
 <p className="text-xl md:text-2xl font-semibold">

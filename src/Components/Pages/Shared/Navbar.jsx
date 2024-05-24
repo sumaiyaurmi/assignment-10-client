@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
@@ -9,28 +9,25 @@ const Navbar = () => {
   const handleLogOut = async () => {
     await logOut();
     try {
-        toast('Hello Darkness!',
-        {
-          icon: '👏',
-          style: {
-            borderRadius: '10px',
-            background: '#333',
-            color: '#fff',
-          },
-        }
-      );
+      toast("Log Out Successfully", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
     } catch (err) {
       console.log(err);
-      toast(err,
-      {
-        icon: '👏',
+      toast(err.message, {
+        icon: '❌',
         style: {
-          borderRadius: '10px',
-          background: '#333',
-          color: '#fff',
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
         },
-      }
-    );    }
+      });
+    }
   };
 
   const links = (
@@ -41,7 +38,7 @@ const Navbar = () => {
       <li>
         <NavLink to={"/all-spot"}> All Tourists Spot</NavLink>
       </li>
-      {user?.email && (
+      {user && (
         <>
           <li>
             <NavLink to={"/add-spot"}> Add Tourists Spot</NavLink>
@@ -106,7 +103,8 @@ const Navbar = () => {
             alt=""
           />
           <p className="text-xl md:text-2xl font-semibold">
-            Tour<span className="font-bold text-3xl text-orange-500">M</span>aster
+            Tour<span className="font-bold text-3xl text-orange-500">M</span>
+            aster
           </p>
         </div>
       </div>
@@ -143,7 +141,7 @@ const Navbar = () => {
             </svg>
           </label>
         </div>
-        {user?.email ? (
+        {user ? (
           <div className="dropdown dropdown-end z-50">
             <div
               tabIndex={0}
@@ -176,24 +174,24 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-         <>
-          <Link to={"/login"}>
-            <button
-              className="btn hover:text-black hover:bg-orange-500
+          <>
+            <Link to={"/login"}>
+              <button
+                className="btn hover:text-black hover:bg-orange-500
                border-orange-500 mr-2"
-            >
-              Login
-            </button>
-          </Link>
-          <Link to={"/sign-up"}>
-            <button
-              className="btn hover:text-black hover:bg-orange-500
+              >
+                Login
+              </button>
+            </Link>
+            <Link to={"/sign-up"}>
+              <button
+                className="btn hover:text-black hover:bg-orange-500
                border-orange-500"
-            >
-              Sign Up
-            </button>
-          </Link>
-         </>
+              >
+                Sign Up
+              </button>
+            </Link>
+          </>
         )}
       </div>
     </div>
