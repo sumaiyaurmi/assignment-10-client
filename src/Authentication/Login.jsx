@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
@@ -76,7 +76,7 @@ const Login = () => {
       });
     }
   };
-  // goggle signIN
+  // github signIN
   const handleGithubSignIN = async () => {
     try {
       const result = await     signInWithGithub();
@@ -111,7 +111,7 @@ const Login = () => {
         <div
           className="hidden bg-cover rounded-2xl bg-center lg:block lg:w-1/2"
           style={{
-            backgroundImage: `url('https://i.postimg.cc/65VZkcnZ/3699660.jpg')`,
+            backgroundImage: `url('https://i.postimg.cc/1zDLMnQZ/vecteezy-cloud-computing-modern-flat-concept-for-web-banner-design-5879539.jpg')`,
           }}
         ></div>
 
@@ -146,13 +146,13 @@ const Login = () => {
             onClick={handleGithubSignIN}
             className="flex cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-100 "
           >
-            <div className="px-4 py-2">
+            <div className="md:px-4 md:py-2">
             <FaGithub className="w-6 h-6" />
 
             </div>
 
             <span className="w-5/6 px-4 py-3 font-bold text-center">
-              Sign in with Google
+              Sign in with Github
             </span>
           </div>
 
@@ -214,7 +214,7 @@ const Login = () => {
             <span className="w-1/5 border-b  md:w-1/4"></span>
 
             <Link
-              to="/signUp"
+              to="/sign-up"
               className="text-xs text-gray-500 uppercase  hover:underline"
             >
               or sign up
