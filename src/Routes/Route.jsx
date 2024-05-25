@@ -4,6 +4,7 @@ import Home from "../Components/Pages/Home";
 import Error from "../Components/Pages/Error";
 import Login from "../Authentication/Login";
 import SignUp from "../Authentication/SignUp";
+import AllSpot from "../Components/Pages/AllSpot";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         {
           path:"/sign-up",
           element:<SignUp></SignUp>
+        },
+        {
+          path:"/all-spot",
+          element:<AllSpot></AllSpot>
         },
         
       ])

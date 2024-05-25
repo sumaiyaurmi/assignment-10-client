@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
@@ -14,7 +13,7 @@ const Banner = () => {
           <div className="pl-4 pt-28 space-y-4">
             {" "}
             <h1 className="text-2xl md:text-4xl font-semibold">
-              TourMaster is with You, <br />
+              Tour<span className="text-orange-500 font-bold">M</span>aster is with You, <br />
               <span className="text-orange-500 font-bold">
                 {/* Style will be inherited from the parent element */}
                 <Typewriter

@@ -21,7 +21,7 @@ const TouristSports = () => {
 
   return (
     <div className="my-10">
-      <Fade>
+      <Fade >
         {" "}
         <h2 className="text-2xl md:text-4xl  font-semibold text-center animate__animated animate__fadeInUp ">
           Your Guide to Southeast Asia`s Best Destinations
