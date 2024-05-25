@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import useAxios from "../../Usehooks/useAxios";
 import { AuthContext } from "../../Provider/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Mylist = () => {
   const axiosSecure = useAxios();
@@ -15,7 +16,38 @@ const Mylist = () => {
     const { data } = await axiosSecure(`/allSpots/${user?.email}`);
     setMyLists(data);
   };
-  console.log(mylists);
+
+  const handleDelete= id=>{
+    Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        
+      })
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        const {data}= axiosSecure.delete(`/allSpots/${id}`)
+// console.log(data)
+const remaining=mylists.filter(list => list._id !== id)
+setMyLists(remaining)
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+      }
+    });
+    
+      }
 
   return (
     <section className="container px-4 mx-auto pt-1 my-10  ">
@@ -109,7 +141,7 @@ const Mylist = () => {
                         <button className=" p-3 rounded-2xl hover:bg-orange-300 font-semibold hover:bg-black hover:text-white">Edit</button>
                       </td>
                       <td className="px-4 py-4 text-sm whitespace-nowrap">
-                        <button className=" p-2 hover:bg-black rounded-2xl">❌</button>
+                        <button onClick={()=>handleDelete(mylist._id)} className=" p-2 hover:bg-black rounded-2xl">❌</button>
                       </td>
                     </tr>
                   ))}
