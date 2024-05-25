@@ -48,7 +48,7 @@ const AllSpotsCard = ({ spot }) => {
         </div>
         <div>
           <p className="text-left font-semibold">
-            Cost : <span className="text-yellow-500"> {average_cost}</span>
+            Cost :<span className="text-yellow-500"> $  {average_cost}</span>
           </p>
           <p className="text-left font-semibold">
             Visitor Per Year :{" "}

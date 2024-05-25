@@ -39,8 +39,29 @@ const AddSpots = () => {
       },
     };
     console.log(spotData);
-
-    
+    try {
+      const { data } = await axiosSecure.post(`/allSpots`, spotData);
+      console.log(data);
+      toast("Tourist Spots Successfully", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+      navigate("/all-spot");
+    } catch (err) {
+      console.log(err);
+      toast(err.message, {
+        icon: "❌",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
   };
 
   return (
