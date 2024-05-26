@@ -13,59 +13,87 @@ import AllSpotDetails from "../Components/Pages/AllSpotDetails";
 import TouristDetails from "../Components/Pages/TouristDetails";
 import CountrySpots from "../Components/Layouts/CountrySpots";
 
-
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      errorElement:<Error></Error>,
-      children:([
-        {
-          path:"/",
-          element:<Home></Home>
-        },
-        {
-          path:"/tourist-details/:id",
-          element:<PrivateRoute><TouristDetails></TouristDetails></PrivateRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/touristSpot/${params.id}`)
-        },
-        {
-          path:"/login",
-          element:<Login></Login>
-        },
-        {
-          path:"/sign-up",
-          element:<SignUp></SignUp>
-        },
-        {
-          path:"/all-spot",
-          element:<AllSpot></AllSpot>
-        },
-        {
-          path:"/allspots-details/:id",
-          element:<PrivateRoute><AllSpotDetails></AllSpotDetails></PrivateRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/allSpot/${params.id}`)
-        },
-        {
-          path:"/add-spot",
-          element:<PrivateRoute><AddSpots></AddSpots></PrivateRoute>
-        },
-        {
-          path:"/my-list",
-          element:<PrivateRoute><Mylist></Mylist></PrivateRoute>
-        },
-        {
-          path: "/spots-update/:id",
-          element:  <PrivateRoute> <Update></Update></PrivateRoute>,
-          loader: ({ params }) =>fetch(`http://localhost:5000/allSpot/${params.id}`),
-        },
-        {
-          path: "/country-spots/:country_name",
-          element:  <PrivateRoute> <CountrySpots></CountrySpots></PrivateRoute>,
-          loader: ({ params }) =>fetch(`http://localhost:5000/country/${params.country_name}`),
-        },
-        
-      ])
-    },
-  ]);
-  export default router
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/tourist-details/:id",
+        element: (
+          <PrivateRoute>
+            <TouristDetails></TouristDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/touristSpot/${params.id}`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/sign-up",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/all-spot",
+        element: <AllSpot></AllSpot>,
+      },
+      {
+        path: "/allspots-details/:id",
+        element: (
+          <PrivateRoute>
+            <AllSpotDetails></AllSpotDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allSpot/${params.id}`),
+      },
+      {
+        path: "/add-spot",
+        element: (
+          <PrivateRoute>
+            <AddSpots></AddSpots>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-list",
+        element: (
+          <PrivateRoute>
+            <Mylist></Mylist>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/spots-update/:id",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Update></Update>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allSpot/${params.id}`),
+      },
+      {
+        path: "/country-spots/:country_name",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <CountrySpots></CountrySpots>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/country/${params.country_name}`),
+      },
+    ],
+  },
+]);
+export default router;
