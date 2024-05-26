@@ -1,4 +1,5 @@
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 
 const AllSpotsCard = ({ spot }) => {
@@ -22,12 +23,12 @@ const AllSpotsCard = ({ spot }) => {
        />
      </figure>
      <div className="card-actions ">
-       <button
+       <Link to={`/allspots-details/${_id}`}><button
          className="btn px-6 hover:text-black hover:bg-orange-500
             border-orange-500 w-full mt-1 "
        >
          View Details
-       </button>
+       </button></Link>
      </div>
    </div>
    <div className="card-body">

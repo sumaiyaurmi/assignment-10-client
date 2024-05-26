@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
 
-    // const spot=useLoaderData()
+    const spot=useLoaderData()
     console.log(spot)
 
     return (

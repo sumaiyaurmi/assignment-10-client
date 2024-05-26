@@ -9,6 +9,7 @@ import AddSpots from "../Components/Pages/AddSpots";
 import Mylist from "../Components/Pages/Mylist";
 import Update from "../Components/Pages/Update";
 import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
+import AllSpotDetails from "../Components/Pages/AllSpotDetails";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
           element:<AllSpot></AllSpot>
         },
         {
+          path:"/allspots-details/:id",
+          element:<AllSpotDetails></AllSpotDetails>,
+          loader:({params})=> fetch(`http://localhost:5000/allSpots/${params.id}`)
+        },
+        {
           path:"/add-spot",
           element:<PrivateRoute><AddSpots></AddSpots></PrivateRoute>
         },
@@ -42,9 +48,9 @@ const router = createBrowserRouter([
           element:<PrivateRoute><Mylist></Mylist></PrivateRoute>
         },
         // {
-        //   path:"/spots-update/:id",
-        //   element:<Update></Update>,
-        //   loader:({params})=> fetch(`http://localhost:5000/allSpots/${params.id}`)
+        //   path: "/spots-update/:id",
+        //   element:  <PrivateRoute> <Update></Update></PrivateRoute>,
+        //   loader: ({ params }) =>fetch(`http://localhost:5000/allSpots/${params.id}`),
         // },
         
       ])
