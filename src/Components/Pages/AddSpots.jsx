@@ -42,7 +42,7 @@ const AddSpots = () => {
     try {
       const { data } = await axiosSecure.post(`/allSpots`, spotData);
       console.log(data);
-      toast("Tourist Spots Successfully", {
+      toast("Tourist Spots Added Successfully", {
         icon: "👏",
         style: {
           borderRadius: "10px",

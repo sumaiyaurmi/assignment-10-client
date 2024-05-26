@@ -10,6 +10,7 @@ import Mylist from "../Components/Pages/Mylist";
 import Update from "../Components/Pages/Update";
 import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
 import AllSpotDetails from "../Components/Pages/AllSpotDetails";
+import TouristDetails from "../Components/Pages/TouristDetails";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>
+        },
+        {
+          path:"/tourist-details/:id",
+          element:<PrivateRoute><TouristDetails></TouristDetails></PrivateRoute>,
+          loader:({params})=> fetch(`http://localhost:5000/touristSpot/${params.id}`)
         },
         {
           path:"/login",
@@ -36,8 +42,8 @@ const router = createBrowserRouter([
         },
         {
           path:"/allspots-details/:id",
-          element:<AllSpotDetails></AllSpotDetails>,
-          loader:({params})=> fetch(`http://localhost:5000/allSpots/${params.id}`)
+          element:<PrivateRoute><AllSpotDetails></AllSpotDetails></PrivateRoute>,
+          loader:({params})=> fetch(`http://localhost:5000/allSpot/${params.id}`)
         },
         {
           path:"/add-spot",
@@ -47,11 +53,11 @@ const router = createBrowserRouter([
           path:"/my-list",
           element:<PrivateRoute><Mylist></Mylist></PrivateRoute>
         },
-        // {
-        //   path: "/spots-update/:id",
-        //   element:  <PrivateRoute> <Update></Update></PrivateRoute>,
-        //   loader: ({ params }) =>fetch(`http://localhost:5000/allSpots/${params.id}`),
-        // },
+        {
+          path: "/spots-update/:id",
+          element:  <PrivateRoute> <Update></Update></PrivateRoute>,
+          loader: ({ params }) =>fetch(`http://localhost:5000/allSpot/${params.id}`),
+        },
         
       ])
     },
