@@ -11,6 +11,7 @@ import Update from "../Components/Pages/Update";
 import PrivateRoute from "../Provider/PrivateRoute/PrivateRoute";
 import AllSpotDetails from "../Components/Pages/AllSpotDetails";
 import TouristDetails from "../Components/Pages/TouristDetails";
+import CountrySpots from "../Components/Layouts/CountrySpots";
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
           path: "/spots-update/:id",
           element:  <PrivateRoute> <Update></Update></PrivateRoute>,
           loader: ({ params }) =>fetch(`http://localhost:5000/allSpot/${params.id}`),
+        },
+        {
+          path: "/country-spots/:country_name",
+          element:  <PrivateRoute> <CountrySpots></CountrySpots></PrivateRoute>,
+          loader: ({ params }) =>fetch(`http://localhost:5000/country/${params.country_name}`),
         },
         
       ])
