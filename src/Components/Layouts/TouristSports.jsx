@@ -17,7 +17,7 @@ const TouristSports = () => {
     getData();
   }, [axiosSecure]);
 
-  console.log(cards);
+  // console.log(cards);
 
   return (
     <div className="my-10">

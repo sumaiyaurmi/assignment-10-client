@@ -38,10 +38,10 @@ const AddSpots = () => {
         image: user?.photURL,
       },
     };
-    console.log(spotData);
+    // console.log(spotData);
     try {
       const { data } = await axiosSecure.post(`/allSpots`, spotData);
-      console.log(data);
+      // console.log(data);
       toast("Tourist Spots Added Successfully", {
         icon: "👏",
         style: {

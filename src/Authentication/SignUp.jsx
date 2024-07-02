@@ -44,7 +44,7 @@ if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(pass)){
 }
 
       const result = await createUser(email, pass);
-      console.log(result.user);
+      // console.log(result.user);
 
       await updateUserProfile(name, image);
       // Optimistic Ui Update
@@ -75,7 +75,7 @@ if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(pass)){
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithGoogle();
-      console.log(result.user);
+      // console.log(result.user);
 
       toast("Sign In Successfully", {
         icon: "👏",
@@ -104,7 +104,7 @@ if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(pass)){
     try {
       const result = await signInWithGithub();
 
-      console.log(result.user);
+      // console.log(result.user);
 
       toast("Sign In Successfully", {
         icon: "👏",

@@ -38,10 +38,10 @@ const Update = () => {
         image: user?.photURL,
       },
     };
-    console.log(spotData);
+    // console.log(spotData);
     try {
       const { data } = await axiosSecure.put(`/allSpot/${spot._id}`, spotData);
-      console.log(data);
+    //   console.log(data);
       toast("Tourist Spots Updated Successfully", {
         icon: "👏",
         style: {

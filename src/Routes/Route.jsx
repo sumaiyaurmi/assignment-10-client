@@ -31,7 +31,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/touristSpot/${params.id}`),
+          fetch(
+            `https://assignment-10-server-brown-beta.vercel.app/touristSpot/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -53,7 +55,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allSpot/${params.id}`),
+          fetch(
+            `https://assignment-10-server-brown-beta.vercel.app/allSpot/${params.id}`
+          ),
       },
       {
         path: "/add-spot",
@@ -80,7 +84,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allSpot/${params.id}`),
+          fetch(
+            `https://assignment-10-server-brown-beta.vercel.app/allSpot/${params.id}`
+          ),
       },
       {
         path: "/country-spots/:country_name",
@@ -91,7 +97,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/country/${params.country_name}`),
+          fetch(
+            `https://assignment-10-server-brown-beta.vercel.app/country/${params.country_name}`
+          ),
       },
     ],
   },

@@ -53,7 +53,7 @@ const Login = () => {
     try {
       const result = await signInWithGoogle();
 
-      console.log(result.user);
+      // console.log(result.user);
 
       toast("Sign In Successfully", {
         icon: "👏",
@@ -81,7 +81,7 @@ const Login = () => {
     try {
       const result = await     signInWithGithub();
 
-      console.log(result.user);
+      // console.log(result.user);
 
       toast("Sign In Successfully", {
         icon: "👏",

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://assignment-10-server-brown-beta.vercel.app",
 });
 const useAxios = () => {
   return axiosSecure;

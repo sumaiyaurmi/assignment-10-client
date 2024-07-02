@@ -2,29 +2,32 @@
 # Tour Master
 
 
+## Tour Master Link
 
-## Learners Live link
-
-[ Site live Link](https://tourmaster-3fe64.web.app/)(https://tourmaster-3fe64.web.app/)
-
-
-## Features of Tour Master
-*  Expertly Curated Destinations:
- Discover handpicked destinations with detailed guides, highlighting the best attractions, activities, and experiences in Southeast Asia.
-
-* Personalized Travel Plans:
-Get customized itineraries based on your preferences, whether you’re seeking adventure, relaxation, or cultural immersion.
-
-*  User Reviews and Ratings:
- Read reviews and ratings from fellow travelers to make informed decisions about your next travel destination.
-
-* Exclusive Deals and Offers:
-Access special discounts on flights, hotels, and tour packages, ensuring you get the best value for your trips.
-* Comprehensive Travel Resources:
-Benefit from a wealth of travel resources, including tips, packing guides, and local insights to enhance your travel experience.
+[ site live Link](https://tourmaster-3fe64.web.app/)(https://tourmaster-3fe64.web.app/)
 
 
+## Project Overview
+- This project, Assignment 10 Client, is part of a larger system designed to manage [briefly describe the purpose, e.g., student assignments].
+- It aims to provide [mention the specific functionality or service provided].
 
-##  My selected category's name
+## Features
+- **Authentication:** Secure login and registration for users.
+- **Real-time Updates:** Provides real-time updates and notifications for [specific events or data changes], enhancing user experience and responsiveness.
+- **Assignment Management:** CRUD operations for managing assignments.
 
-Southeast Asia
+## Technology Used
+- Frontend: HTML5, CSS3, JavaScript, React
+- Backend: Node.js, Express
+- Database: MongoDB
+- State Management: Redux
+- Other: Axios, Bootstrap
+
+## Installation and Setup
+To clone and run this project locally, follow these steps:
+1. Clone the repository: `git clone https://github.com/sumaiyaurmi/assignment-10-client.git`
+2. Navigate to the project directory: `cd assignment-10-client`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+
+
